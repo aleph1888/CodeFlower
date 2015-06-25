@@ -168,7 +168,12 @@ function layout() {
 
 	/* Devuelve la url de la imagen segun el tipo del nodo */
 	function set_imagen(d) {
-		return "samples/sample1/uimg/" + d.tipo + ".png?1.0.0";
+        if (d.imagen) {
+            var url = d.imagen;
+         }else{
+            var url = d.tipo;
+         }
+		return "samples/sample1/uimg/" + url + ".png?1.0.0";
 	}
 
 }

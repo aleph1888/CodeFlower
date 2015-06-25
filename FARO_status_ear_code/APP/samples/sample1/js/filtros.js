@@ -44,7 +44,7 @@ function filtros () {
 
 		// Una avatar para cada ocurrencia 
 		cadaFamilia.append("img")
-			.attr("src", path + "uimg/familia.png?1.0.0");
+            .attr("src", function(d) { return path + "uimg/" + d.imagen + ".png?1.00!"; });
 
 		// Un selector para cada ocurrencia
 		cadaFamilia.append("span")
