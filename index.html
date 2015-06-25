@@ -47,6 +47,8 @@ line.link {
           <fieldset>
           <label>Example projects from GitHub:</label>
           <select id="project">
+            <option value="">Escoge red de control:</option>
+            <option value="data/fstatusear.json">faro_status_ear / HTML5 gui</option>
             <option value="data/uptime.json">fzaninotto / uptime</option>
             <option value="data/faker.json">fzaninotto / faker</option>
             <option value="data/jquery.json">jquery / jquery</option>
@@ -137,8 +139,8 @@ $ git ls-files | xargs wc -l > symfony.wc
         if (currentCodeFlower) currentCodeFlower.cleanup();
         // adapt layout size to the total number of elements
         var total = countElements(json);
-        w = parseInt(Math.sqrt(total) * 30, 10);
-        h = parseInt(Math.sqrt(total) * 30, 10);
+        w = 800; //parseInt(Math.sqrt(total) * 30, 10);
+        h = 300; //parseInt(Math.sqrt(total) * 30, 10);
         // create a new CodeFlower
         currentCodeFlower = new CodeFlower("#visualization", w, h).update(json);
       };

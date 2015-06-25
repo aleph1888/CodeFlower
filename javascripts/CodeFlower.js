@@ -118,6 +118,8 @@ CodeFlower.prototype.click = function(d) {
     d._children = null;
   }
   this.update();
+  window.open(d.url, d.name);
+
 };
 
 CodeFlower.prototype.mouseover = function(d) {
