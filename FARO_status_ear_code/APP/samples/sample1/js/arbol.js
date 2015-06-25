@@ -28,7 +28,7 @@ function arbol( datos ) {
 		arbol.push(this.nodo_actividades());
 		arbol.push(this.nodo_dias());
 
-		this.root = crea_nodo("Familias", "raiz", arbol );
+		this.root = crea_nodo("APP", "raiz", arbol );
 
 		return this;
 
@@ -40,7 +40,7 @@ function arbol( datos ) {
 		var arbol = [];
 		this.datos.forEach( function(f) {
 			arbol.push( 
-				crea_nodo(f.familia, "familia", 
+				crea_nodo(f.name, "familia", 
 					me.personas_familia(f.familia, f.nodos), f.imagen, f.text
 				) 
 			);

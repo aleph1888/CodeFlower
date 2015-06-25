@@ -51,10 +51,10 @@ function filtros () {
 			.text(function(d){return d.familia})
 			.append("input")
 			.attr("type", "checkbox")
-			.attr("id", function(d){ return "chk_filtro_familia_" + normalizar(d.familia) })
+			.attr("id", function(d){ return "chk_filtro_familia_" + normalizar(d.name) })
 			.attr("checked", true)
 			.on("click", function(d){
-				me.layout.click(d3.select(".familia" + normalizar(d.familia)).datum(), me.layout)
+				me.layout.click(d3.select(".familia" + normalizar(d.name)).datum(), me.layout)
 			}); 
 
 	}
