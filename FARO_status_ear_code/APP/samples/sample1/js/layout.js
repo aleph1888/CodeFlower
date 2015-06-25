@@ -130,7 +130,7 @@ function layout() {
 			});
 		nodeEnter.append("text")
 			.attr("dy", ".35em")
-			.text(function(d) { return me.es_persona(d.tipo) ? d.name + "(" + d.edad + ")" : d.name; })
+			.text(function(d) { return me.es_persona(d.tipo) ? d.name + "(" + d.edad + ")" : d.text + " | " + d.name; })
 			.attr("y", 23);
 		nodeEnter.select("circle")
 			.style("fill", color);

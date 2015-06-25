@@ -1,6 +1,7 @@
 [
-	{	"id": "A", 
-        "familia": "Setup | Configuración, instalación", 
+	{	"name": "A", 
+        "tipo": "familia",
+        "text": "Setup | Configuración, instalación", 
         "imagen" : "config_wheel",
 		"nodos": [ 
 			{"nombre" : "Juan", "relacion": "padre", "edad" : 45, "actividades" :
@@ -42,9 +43,10 @@
 			}
 		]
 	},
-	{	"id": "B", 
-        "familia": "Run | Tiempo de ejecución", 
-         "imagen" : "running_time",
+	{	"name": "B", 
+        "tipo": "familia",
+        "text": "Run | Tiempo de ejecución", 
+        "imagen" : "running_time",
 		"nodos": [ 
 			{"nombre" : "Federico", "relacion": "padre", "edad" : 65, "actividades" :
 				[

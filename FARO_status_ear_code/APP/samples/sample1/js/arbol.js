@@ -41,7 +41,7 @@ function arbol( datos ) {
 		this.datos.forEach( function(f) {
 			arbol.push( 
 				crea_nodo(f.familia, "familia", 
-					me.personas_familia(f.familia, f.nodos) 
+					me.personas_familia(f.familia, f.nodos), f.imagen, f.text
 				) 
 			);
 		});
@@ -55,7 +55,7 @@ function arbol( datos ) {
 		var lista_dias = [];
 		var me = this;
 		this.lista_unica_dias.forEach( function(dia) {
-			lista_dias.push(crea_nodo(me.literales_dias[dia-1], "dia", null));
+			lista_dias.push(crea_nodo(me.literales_dias[dia-1], "dia"));
 		});
 
 		return crea_nodo("DIAS", "subroot", lista_dias);
@@ -69,7 +69,7 @@ function arbol( datos ) {
 		var me = this;
 
 		this.lista_unica_actividades.forEach( function(act) {
-			var nodo = crea_nodo(act.nombre, act.tipo, null);
+			var nodo = crea_nodo(act.nombre, act.tipo);
 			nodo["dias"] = act.dias;
 			lista_actividades.push(nodo);
 		});
@@ -84,7 +84,7 @@ function arbol( datos ) {
 		var lista_personas = [];
 
 		personas.forEach( function(persona) {
-			var nodo = crea_nodo(persona.nombre, persona.relacion, null)
+			var nodo = crea_nodo(persona.nombre, persona.relacion)
 			nodo["edad"] = persona.edad;
 			nodo["familia"] = familia;
 			nodo["actividades"] = persona.actividades;
@@ -95,11 +95,13 @@ function arbol( datos ) {
 
 	}
 
-	function crea_nodo( name, tipo, children ) {
+	function crea_nodo( name, tipo, children="", imagen="", text="" ) {
 		var nodo = {};
-		nodo["name"] = name;
+		nodo["text"] = text;
+        nodo["name"] = name;
 		nodo["tipo"] = tipo;
 		nodo["children"] = children;
+        nodo["imagen"] = imagen ? imagen : tipo;
 		return nodo;
 	}
 
